@@ -2,14 +2,14 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const orderSchema = new Schema({
+const basketSchema = new Schema({
     user: {type: mongoose.Schema.ObjectId, ref: 'User'},
-    basket: {type: mongoose.Schema.ObjectId, ref: 'Basket'},
+    items: [{type: mongoose.Schema.ObjectId, ref: 'Item'}],
     is_deleted: { type: Boolean, required: true, default: false },
 }, {
   timestamps: true,
 });
 
-const Order = mongoose.model('Order', orderSchema);
+const Basket = mongoose.model('Order', basketSchema);
 
-module.exports = Order;
+module.exports = Basket;
