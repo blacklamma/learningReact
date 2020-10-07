@@ -8,7 +8,6 @@ const userSchema = new Schema({
   email_id: { type: String, required: true},
   mobile_no: { type: String, required: true},
   password: { type: String, required: true},
-  addition_date: { type: Date, required: Date.now() },
   is_deleted: { type: Boolean, required: true, default: false },
 }, {
   timestamps: true,
